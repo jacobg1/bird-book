@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170804181324) do
     t.string "country"
     t.string "state"
     t.string "city"
+    t.string "place_photo_url"
   end
 
   create_table "posts", force: :cascade do |t|
