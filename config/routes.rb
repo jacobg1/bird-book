@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root to: 'posts#index'
 
 
-  resources :places do 
+  resources :places do
     resources :posts do
       resources :guesses
     end
