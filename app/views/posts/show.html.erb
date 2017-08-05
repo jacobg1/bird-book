@@ -1,1 +1,4 @@
-post show working
+<img src="<%= @post.photo_url %>"/>
+<% @post.guesses.each do |guess| %>
+  <p><%= guess.guess_text %></p>
+<% end %>
