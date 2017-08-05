@@ -33,6 +33,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @place = Place.find(params[:place_id])
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to place_posts_path(@place)
   end
 
   private
