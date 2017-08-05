@@ -8,8 +8,20 @@ class PlacesController < ApplicationController
     @place = Place.new
   end
   #create
+  def create
+    @place = Place.create(place_params)
+    redirect_to places_path
+  end
   #edit
+  def edit
+    @place = Place.find(params[:id])
+  end
   #update
+  def update
+    @place = Place.find(params[:id])
+    @place.update(place_params)
+    redirect_to places_path
+  end
   #destroy
   private
   def place_params

@@ -2,7 +2,7 @@
 <%= link_to 'Add your location!', new_place_path %>
 
 <% @places.each do |place| %>
-  <p><%= link_to place.city, place_posts_path(place)  %>, <%= place.state %></p>
+  <p><%= link_to place.city, place_posts_path(place)  %>, <%= place.state %> <%= link_to '(edit)', edit_place_path(place) %></p>
   <p><%= place.country %></p>
   <img src="<%=place.place_photo_url%>"/>
 <% end %>
