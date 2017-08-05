@@ -23,6 +23,11 @@ class PlacesController < ApplicationController
     redirect_to places_path
   end
   #destroy
+  def destroy
+    @place = Place.find(params[:id])
+    @place.destroy
+    redirect_to places_path
+  end
   private
   def place_params
     params.require(:place).permit(:country, :state, :city, :place_photo_url)
