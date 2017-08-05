@@ -25,7 +25,7 @@ class PlacesController < ApplicationController
   #destroy
   def destroy
     @place = Place.find(params[:id])
-    @place.destroy
+    @place.destroy!
     redirect_to places_path
   end
   private
