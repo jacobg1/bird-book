@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170805194622) do
   create_table "guesses", force: :cascade do |t|
     t.string "guess_text"
     t.bigint "post_id"
-    t.integer "score"
+    t.integer "score", default: 0
     t.index ["post_id"], name: "index_guesses_on_post_id"
   end
 
