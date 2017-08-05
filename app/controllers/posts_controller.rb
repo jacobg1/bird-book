@@ -3,4 +3,8 @@ class PostsController < ApplicationController
     @place = Place.find(params[:place_id])
     @posts = @place.posts.all
   end
+  def show
+    @place = Place.find(params[:place_id])
+    @post = @place.posts.find(params[:id])
+  end
 end
