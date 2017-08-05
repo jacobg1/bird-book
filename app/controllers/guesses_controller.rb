@@ -1,7 +1,11 @@
 class GuessesController < ApplicationController
   def show
     @post = Post.find(params[:post_id])
-    @guesses = @post.guesses.all
+    @place = @post.place
+    @guess = Guess.find(params[:id])
+    @guess.score_up
+    @guess.save
+    redirect_to place_post_path(@place, @post)
   end
 
   def new
