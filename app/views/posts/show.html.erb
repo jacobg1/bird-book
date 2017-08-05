@@ -1,3 +1,4 @@
+<%= link_to 'take a guess', new_post_guess_path(@post) %>
 <img src="<%= @post.photo_url %>"/>
 <% @post.guesses.each do |guess| %>
   <p><%= guess.guess_text %></p>

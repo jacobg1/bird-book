@@ -1,0 +1,8 @@
+<%= form_for ([@post, @guess]) do |f| %>
+
+  <%= f.label :guess_text %>
+  <%= f.text_field :guess_text %>
+
+  <%= f.submit %>
+
+<% end %>
