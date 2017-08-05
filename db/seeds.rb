@@ -14,8 +14,8 @@ another_place = Place.create(country: 'USA', state: 'VA', city: 'Annandale', pla
 
 first_post = my_place.posts.create(title: 'CRAZY tree', photo_url: 'http://i.imgur.com/IMGCj.jpg')
 
-first_guess = first_post.guesses.create(guess_text: 'its a palm tree')
-second_guess = first_post.guesses.create(guess_text: 'nah its a dogwood dude')
+first_guess = first_post.guesses.create(guess_text: 'its a palm tree', score: 0)
+second_guess = first_post.guesses.create(guess_text: 'nah its a dogwood dude', score: 0)
 
 def us_states
     [
