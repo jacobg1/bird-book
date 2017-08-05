@@ -1,3 +1,4 @@
+<%= link_to 'new post', new_place_post_path(@place) %>
 <% @posts.each do |post| %>
   <p><%= link_to post.title, place_post_path(@place, post) %></p>
   <img src="<%= post.photo_url %>"/>
