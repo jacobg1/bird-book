@@ -1,4 +1,5 @@
 class Guess < ApplicationRecord
+  default_scope { order('score DESC') }
   belongs_to :post
   validates :guess_text, presence: true
 
