@@ -1,8 +1,7 @@
 <%= simple_form_for @place do |f| %>
 
- <%= f.label :country, error: 'cant be blank' %>
- <%= f.text_field :country %>
- 
+ <%= f.input :country, error: 'cant be blank' %>
+
   <%= f.input :state %>
 
   <%= f.input :city %>
