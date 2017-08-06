@@ -11,8 +11,14 @@ class PostsController < ApplicationController
 
   def create
     @place = Place.find(params[:place_id])
-    @post = @place.posts.create(post_params)
+    @post = @place.posts.new(post_params)
+    if @post.save
+      flash[:notice] = 'Post Created'
     redirect_to place_posts_path(@place)
+  else
+    flash[:alert] = "can't be blank"
+    redirect_to new_place_post_path(@place)
+  end
   end
 
   def show
