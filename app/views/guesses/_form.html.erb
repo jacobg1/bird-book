@@ -1,7 +1,6 @@
-<%= form_for ([@post, @guess]) do |f| %>
+<%= simple_form_for ([@post, @guess]) do |f| %>
 
-  <%= f.label :guess_text %>
-  <%= f.text_field :guess_text %>
+  <%= f.input :guess_text, label: 'take a guess!', error: 'Enter guess!' %>
 
   <%= f.submit %>
 
