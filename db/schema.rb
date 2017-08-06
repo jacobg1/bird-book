@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20170805194622) do
 
   create_table "guesses", force: :cascade do |t|
     t.string "guess_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "post_id"
     t.integer "score", default: 0
     t.index ["post_id"], name: "index_guesses_on_post_id"
@@ -32,6 +34,8 @@ ActiveRecord::Schema.define(version: 20170805194622) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "photo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "place_id"
     t.index ["place_id"], name: "index_posts_on_place_id"
   end
