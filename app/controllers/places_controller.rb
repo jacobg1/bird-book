@@ -11,11 +11,9 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     if @place.save
-      flash[:notice] = 'Place Created'
       redirect_to places_path
     else
-      flash[:alert] = "Can't be blank"
-      redirect_to new_place_path
+      render :new
     end
   end
   #edit

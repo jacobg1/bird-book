@@ -13,11 +13,9 @@ class PostsController < ApplicationController
     @place = Place.find(params[:place_id])
     @post = @place.posts.new(post_params)
       if @post.save
-        flash[:notice] = 'Post Created'
         redirect_to place_post_path(@place, @post)
       else
-        flash[:alert] = "can't be blank"
-        redirect_to new_place_post_path(@place)
+        render :new
       end
   end
 

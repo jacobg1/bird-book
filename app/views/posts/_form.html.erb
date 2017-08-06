@@ -1,10 +1,8 @@
-<%= form_for ([@place, @post]) do |f| %>
+<%= simple_form_for ([@place, @post]) do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.input :title, label: 'post title', error: "can't be blank" %>
 
-  <%= f.label :photo_url %>
-  <%= f.text_field :photo_url%>
+  <%= f.input :photo_url, label: 'photo' %>
 
   <%= f.submit %>
 
