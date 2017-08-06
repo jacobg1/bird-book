@@ -2,7 +2,7 @@
 
  <%= f.input :country, error: 'cant be blank' %>
 
-  <%= f.input :state %>
+  <%= f.input :state, collection: @place.us_states %>
 
   <%= f.input :city %>
 
