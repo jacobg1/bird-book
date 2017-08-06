@@ -10,7 +10,7 @@ class GuessesController < ApplicationController
     @guesses = Guess.all
     @guess.score_up
     @guess.save
-  
+
     redirect_to place_post_path(@place, @post)
   end
 
@@ -22,8 +22,14 @@ class GuessesController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @place = @post.place
-    @guess = @post.guesses.create(guess_params)
-    redirect_to place_post_path(@place, @post)
+    @guess = @post.guesses.new(guess_params)
+    if @guess.save
+      flash[:notice] = 'Guess made!'
+      redirect_to place_post_path(@place, @post)
+    else
+      flash[:alert] = 'Enter guess!'
+      redirect_to new_post_guess_path(@post)
+    end
   end
 
   def edit
@@ -36,6 +42,7 @@ class GuessesController < ApplicationController
     @place = @post.place
     @guess = Guess.find(params[:id])
     @guess.update(guess_params)
+    flash[:notice] = 'Guess updated!'
     redirect_to place_post_path(@place, @post)
   end
 
@@ -44,6 +51,7 @@ class GuessesController < ApplicationController
     @place = @post.place
     @guess = Guess.find(params[:id])
     @guess.destroy
+    flash[:alert] = 'Guess deleted!'
     redirect_to place_post_path(@place, @post)
   end
 

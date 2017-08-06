@@ -1,5 +1,6 @@
 class Guess < ApplicationRecord
   belongs_to :post
+  validates :guess_text, presence: true
 
   def score_up
     self.score += 1

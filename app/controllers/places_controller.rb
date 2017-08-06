@@ -9,8 +9,14 @@ class PlacesController < ApplicationController
   end
   #create
   def create
-    @place = Place.create(place_params)
-    redirect_to places_path
+    @place = Place.new(place_params)
+    if @place.save
+      flash[:notice] = 'Place Created'
+      redirect_to places_path
+    else
+      flash[:alert] = "Can't be blank"
+      redirect_to new_place_path
+    end
   end
   #edit
   def edit
@@ -20,12 +26,14 @@ class PlacesController < ApplicationController
   def update
     @place = Place.find(params[:id])
     @place.update(place_params)
+    flash[:notice] = 'Place Updated'
     redirect_to places_path
   end
   #destroy
   def destroy
     @place = Place.find(params[:id])
     @place.destroy!
+    flash[:alert] = "Place Deleted!"
     redirect_to places_path
   end
   private
