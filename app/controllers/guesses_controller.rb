@@ -27,8 +27,7 @@ class GuessesController < ApplicationController
       flash[:notice] = 'Guess made!'
       redirect_to place_post_path(@place, @post)
     else
-      flash[:alert] = 'Enter guess!'
-      redirect_to new_post_guess_path(@post)
+      render :new
     end
   end
 
@@ -41,9 +40,12 @@ class GuessesController < ApplicationController
     @post = Post.find(params[:post_id])
     @place = @post.place
     @guess = Guess.find(params[:id])
-    @guess.update(guess_params)
-    flash[:notice] = 'Guess updated!'
-    redirect_to place_post_path(@place, @post)
+    if @guess.update(guess_params)
+      flash[:notice] = 'Guess updated!'
+      redirect_to place_post_path(@place, @post)
+    else
+      render :new
+    end
   end
 
   def destroy

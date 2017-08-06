@@ -13,6 +13,7 @@ class PostsController < ApplicationController
     @place = Place.find(params[:place_id])
     @post = @place.posts.new(post_params)
       if @post.save
+        flash[:notice] = 'Post Created'
         redirect_to place_post_path(@place, @post)
       else
         render :new
@@ -32,9 +33,12 @@ class PostsController < ApplicationController
   def update
     @place = Place.find(params[:place_id])
     @post = Post.find(params[:id])
-    @post.update(post_params)
-    flash[:notice] = 'Post Updated'
-    redirect_to place_posts_path(@place)
+      if @post.update(post_params)
+        flash[:notice] = 'Post Updated'
+        redirect_to place_posts_path(@place)
+      else
+        render :new
+      end
   end
 
   def destroy

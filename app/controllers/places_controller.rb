@@ -11,6 +11,7 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     if @place.save
+      flash[:notice] = 'Place Created'
       redirect_to places_path
     else
       render :new
@@ -23,9 +24,12 @@ class PlacesController < ApplicationController
   #update
   def update
     @place = Place.find(params[:id])
-    @place.update(place_params)
+    if @place.update(place_params)
     flash[:notice] = 'Place Updated'
     redirect_to places_path
+  else
+    render :new
+  end
   end
   #destroy
   def destroy
