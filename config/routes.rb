@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'places#index'
 
     resources :places do
@@ -8,7 +9,6 @@ Rails.application.routes.draw do
     resources :posts do
       resources :guesses
     end
-
 
   # resources :places do
   #   resources :posts do
