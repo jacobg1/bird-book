@@ -5,7 +5,10 @@
   <p>Updated: <%= guess.updated_at %></p>
   <p><%= guess.guess_text %>,
     <% if guess.user == current_user %>
-    <%= link_to 'edit', edit_post_guess_path(@post, guess) %> <%= link_to 'delete', post_guess_path(@post, guess), method: :delete %>
+    <%= link_to 'edit', edit_post_guess_path(@post, guess) %>
+    <%= link_to 'delete', post_guess_path(@post, guess), method: :delete %>
     <% end  %>
-    <%= link_to '(+)', post_guess_path(@post, guess)  %> <%#= link_to 'score_down', root_path, Guess.increment_counter(guess.score, guess) %> <%= guess.score %> </p>
+    <%= link_to "&uarr;".html_safe, increase_score_guess_path(guess), method: :post %>
+    <%= link_to "&darr;".html_safe, decrease_score_guess_path(guess), method: :post %>
+    <%= guess.score %>
 <% end %>
