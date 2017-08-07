@@ -1,18 +1,32 @@
 class GuessesController < ApplicationController
-  def index
-
-  end
-
-  def show
-    @post = Post.find(params[:post_id])
-    @place = @post.place
+  def increase_score
     @guess = Guess.find(params[:id])
-    @guesses = Guess.all
+    @post = @guess.post
+    @place = @post.place
     @guess.score_up
     @guess.save
-
     redirect_to place_post_path(@place, @post)
-  end
+    end
+
+    def decrease_score
+      @guess = Guess.find(params[:id])
+      @post = @guess.post
+      @place = @post.place
+      @guess.score_down
+      @guess.save
+      redirect_to place_post_path(@place, @post)
+    end
+
+  # def show
+  #   @post = Post.find(params[:post_id])
+  #   @place = @post.place
+  #   @guess = Guess.find(params[:id])
+  #   @guesses = Guess.all
+  #   @guess.score_up
+  #   @guess.save
+  #
+  #   redirect_to place_post_path(@place, @post)
+  # end
 
   def new
     @post = Post.find(params[:post_id])

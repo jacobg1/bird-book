@@ -9,7 +9,13 @@ Rails.application.routes.draw do
     resources :posts do
       resources :guesses
     end
-
+    
+    resources :guesses do
+    member do
+            post "increase_score"
+            post "decrease_score"
+        end
+      end
   # resources :places do
   #   resources :posts do
   #     resources :guesses
