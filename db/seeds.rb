@@ -23,6 +23,9 @@ first_guess = first_post.guesses.create(user: jake, guess_text: 'its a palm tree
 second_guess = first_post.guesses.create(user: jake, guess_text: 'nah its a dogwood dude', score: 0)
 
 first_cat = first_post.categories.create!(category_text: 'test')
+second_cat = first_post.categories.create!(category_text: 'tree')
+
+
 
 
 def us_states
