@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   def show
     @place = Place.find(params[:place_id])
     @post = @place.posts.find(params[:id])
+    @tags = @post.tags
   end
 
   def edit
