@@ -22,7 +22,7 @@ class GuessesController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @place = @post.place
-    @guess = @post.guesses.new(guess_params)
+    @guess = @post.guesses.new(guess_params.merge(user: current_user))
     if @guess.save
       flash[:notice] = 'Guess made!'
       redirect_to place_post_path(@place, @post)
