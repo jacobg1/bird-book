@@ -1,0 +1,6 @@
+<h2><%= @category.category_text %></h2>
+
+<% @posts.each do |post| %>
+<%= post.title %>
+<img src= "<%= post.photo_url %>" />
+<% end %>
