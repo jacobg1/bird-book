@@ -1,6 +1,11 @@
+<h1><%= @post.title %></h1>
 <%= link_to 'take a guess', new_post_guess_path(@post) %>
 <img src="<%= @post.photo_url %>"/>
 <% @post.guesses.each do |guess| %>
   <p>Updated: <%= guess.updated_at %></p>
-  <p><%= guess.guess_text %>, <%= link_to 'edit', edit_post_guess_path(@post, guess) %> <%= link_to 'delete', post_guess_path(@post, guess), method: :delete %>, <%= link_to '(+)', post_guess_path(@post, guess)  %> <%#= link_to 'score_down', root_path, Guess.increment_counter(guess.score, guess) %> <%= guess.score %> </p>
+  <p><%= guess.guess_text %>,
+    <% if guess.user == current_user %>
+    <%= link_to 'edit', edit_post_guess_path(@post, guess) %> <%= link_to 'delete', post_guess_path(@post, guess), method: :delete %>
+    <% end  %>
+    <%= link_to '(+)', post_guess_path(@post, guess)  %> <%#= link_to 'score_down', root_path, Guess.increment_counter(guess.score, guess) %> <%= guess.score %> </p>
 <% end %>
