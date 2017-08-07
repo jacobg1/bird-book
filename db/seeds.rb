@@ -9,6 +9,8 @@ Place.destroy_all
 Post.destroy_all
 Guess.destroy_all
 User.destroy_all
+Category.destroy_all
+Tag.destroy_all
 
 jake = User.create!(email: 'email@jake.com', password: 'password')
 
@@ -19,6 +21,9 @@ first_post = my_place.posts.create(title: 'CRAZY tree', photo_url: 'http://i.img
 
 first_guess = first_post.guesses.create(user: jake, guess_text: 'its a palm tree', score: 0)
 second_guess = first_post.guesses.create(user: jake, guess_text: 'nah its a dogwood dude', score: 0)
+
+first_cat = first_post.categories.create!(category_text: 'test')
+
 
 def us_states
     [
