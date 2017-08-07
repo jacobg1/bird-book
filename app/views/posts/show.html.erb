@@ -1,6 +1,6 @@
 <h1><%= @post.title %></h1>
 <% @tags.each do |cat| %>
-<%= cat.category.category_text %>
+<%= link_to cat.category.category_text, category_path(cat) %>
 <% end %>
 <%= link_to 'take a guess', new_post_guess_path(@post) %>
 <img src="<%= @post.photo_url %>"/>

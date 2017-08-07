@@ -6,12 +6,19 @@ Rails.application.routes.draw do
       resources :posts
     end
 
+    resources :categories
+
     resources :posts do
       resources :guesses
+      resources :tags, only: [:new, :create]
     end
-    
+
+
+
+
+
     resources :guesses do
-    member do
+      member do
             post "increase_score"
             post "decrease_score"
         end
