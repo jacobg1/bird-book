@@ -8,14 +8,17 @@
 Place.destroy_all
 Post.destroy_all
 Guess.destroy_all
+User.destroy_all
+
+jake = User.create!(email: 'email@jake.com', password: 'password')
 
 my_place = Place.create(country: 'USA', state: 'VA', city: 'Springfield', place_photo_url: 'http://a3.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fncaa%2F500%2F258.png')
 another_place = Place.create(country: 'USA', state: 'VA', city: 'Annandale', place_photo_url: 'http://a3.espncdn.com/combiner/i?img=%2Fi%2Fteamlogos%2Fncaa%2F500%2F258.png')
 
 first_post = my_place.posts.create(title: 'CRAZY tree', photo_url: 'http://i.imgur.com/IMGCj.jpg')
 
-first_guess = first_post.guesses.create(guess_text: 'its a palm tree', score: 0)
-second_guess = first_post.guesses.create(guess_text: 'nah its a dogwood dude', score: 0)
+first_guess = first_post.guesses.create(user: jake, guess_text: 'its a palm tree', score: 0)
+second_guess = first_post.guesses.create(user: jake, guess_text: 'nah its a dogwood dude', score: 0)
 
 def us_states
     [

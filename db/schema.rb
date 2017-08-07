@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170806201219) do
+ActiveRecord::Schema.define(version: 20170806234922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,9 @@ ActiveRecord::Schema.define(version: 20170806201219) do
     t.datetime "updated_at", null: false
     t.bigint "post_id"
     t.integer "score", default: 0
+    t.bigint "user_id"
     t.index ["post_id"], name: "index_guesses_on_post_id"
+    t.index ["user_id"], name: "index_guesses_on_user_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -58,5 +60,6 @@ ActiveRecord::Schema.define(version: 20170806201219) do
   end
 
   add_foreign_key "guesses", "posts"
+  add_foreign_key "guesses", "users"
   add_foreign_key "posts", "places"
 end
