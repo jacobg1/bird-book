@@ -40,7 +40,7 @@ class GuessesController < ApplicationController
     @post = Post.find(params[:post_id])
     @place = @post.place
     @guess = Guess.find(params[:id])
-    if @guess.update(guess_params)
+    if @guess.update(guess_params.merge(user: current_user))
       flash[:notice] = 'Guess updated!'
       redirect_to place_post_path(@place, @post)
     else
