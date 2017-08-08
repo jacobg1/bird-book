@@ -12,21 +12,7 @@
   </head>
 
   <body>
-    <div class="dropdown">
-      <button class="dropbtn">Menu</button>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      <div class="dropdown-content">
-      <% if !current_user %>
-      <%= link_to "Sign Up", new_user_registration_path, :class => 'home-links' %>
-      <%= link_to "Sign In", new_user_session_path, :class => 'home-links'  %>
-      <% else %>
-      <%= link_to "Sign Out", destroy_user_session_path, :class => 'home-links', method: :delete %>
-      <% end %>
-      <%= link_to 'home', root_path, :class => 'home-links' %>
-      </div>
-    </div>
-
+  
     <%= yield %>
   </body>
 </html>
