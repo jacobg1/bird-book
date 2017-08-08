@@ -1,6 +1,6 @@
 <h1><%= @post.title %></h1>
-<% @tags.each do |cat| %>
-<%= link_to cat.category.category_text, category_path(cat) %>
+<% @tags.each do |tag| %>
+<%= link_to tag.category.category_text, post_tags_path(@post) %>
 <% end %>
 <h3>Add Tag</h3>
 <%= form_for [@post, @tag] do |f| %>

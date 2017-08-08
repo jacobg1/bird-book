@@ -1,4 +1,10 @@
-<%= link_to 'new post', new_place_post_path(@place) %>
+<div class="dropdown">
+  <button class="dropbtn">Posts</button>
+
+<div class="dropdown-content">
+<%= link_to 'new post', new_place_post_path(@place), :class => 'home-links' %>
+</div>
+</div>
 <% @posts.each do |post| %>
   <p>Updated: <%= post.updated_at %></p>
   <p><%= link_to post.title, place_post_path(@place, post) %></p>
