@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
     resources :posts do
       resources :guesses
-      resources :tags, only: [:new, :create]
+      resources :tags
     end
 
 

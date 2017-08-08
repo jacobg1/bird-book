@@ -30,6 +30,7 @@ class GuessesController < ApplicationController
 
   def new
     @post = Post.find(params[:post_id])
+    @place = @post.place
     @guess = @post.guesses.new
   end
 
