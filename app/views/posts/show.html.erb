@@ -2,6 +2,11 @@
 <% @tags.each do |cat| %>
 <%= link_to cat.category.category_text, category_path(cat) %>
 <% end %>
+<h3>Add Tag</h3>
+<%= form_for [@post, @tag] do |f| %>
+<%= text_field_tag :category_text %>
+<%= f.submit "Create Tag" %>
+<% end %>
 <%= link_to 'take a guess', new_post_guess_path(@post) %>
 <img src="<%= @post.photo_url %>"/>
 <% @post.guesses.each do |guess| %>

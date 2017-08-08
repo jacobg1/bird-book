@@ -24,6 +24,7 @@ class PostsController < ApplicationController
     @place = Place.find(params[:place_id])
     @post = @place.posts.find(params[:id])
     @tags = @post.tags
+    @tag = Tag.new
   end
 
   def edit
