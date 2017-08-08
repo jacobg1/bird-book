@@ -1,4 +1,8 @@
 class TagsController < ApplicationController
+  def index
+    @tags = Tag.all
+  end
+  
   def create
     @post = Post.find(params[:post_id])
     @place = @post.place
@@ -13,4 +17,5 @@ class TagsController < ApplicationController
     end
       redirect_to place_post_path(@place, @post)
     end
+
 end
