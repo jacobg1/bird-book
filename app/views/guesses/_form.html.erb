@@ -1,7 +1,7 @@
 <%= simple_form_for ([@post, @guess]) do |f| %>
 
-  <%= f.input :guess_text, label: 'take a guess!', error: 'Enter guess!' %>
+  <%= f.input :guess_text, :input_html => { :class => 'comment-form' }, label: 'Comment', error: 'Enter comment!' %>
 
-  <%= f.submit %>
+  <%= f.button :submit, 'Make comment!' %>
 
 <% end %>

@@ -37,7 +37,7 @@
 <br>
 <div class="add-tags">
 
-<%= simple_form_for [@post, @tag] do |f| %>
+<%= form_for [@post, @tag] do |f| %>
 <%= text_field_tag :category_text %>
 <%= f.submit "Create Tag" %>
 <% end %>
