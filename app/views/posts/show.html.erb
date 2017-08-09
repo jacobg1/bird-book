@@ -51,12 +51,13 @@
 <div class="guesses">
   <p class='guess-text'><%= guess.guess_text %>
     <% if guess.user == current_user %>
-    <%= link_to 'edit', edit_post_guess_path(@post, guess) %>
-    <%= link_to 'delete', post_guess_path(@post, guess), method: :delete %>
+
+    <%= link_to 'edit', edit_post_guess_path(@post, guess), :class => "comment-edit-delete" %>
+    <%= link_to 'delete', post_guess_path(@post, guess), :class => "comment-edit-delete", method: :delete %>
     <% end  %>
-    <%= link_to "&uarr;".html_safe, increase_score_guess_path(guess), method: :post %>
-    <%= link_to "&darr;".html_safe, decrease_score_guess_path(guess), method: :post %>
-    <%= guess.score %>
+    <%= link_to "&uarr;".html_safe, increase_score_guess_path(guess), :class => "arrows", method: :post %>
+    <%= link_to "&darr;".html_safe, decrease_score_guess_path(guess), :class => "arrows", method: :post %>
+    <span class="score"><%= guess.score %></span>
     <p class='guess-created'>Created: <%= guess.created_at %></p>
 
     </div>
