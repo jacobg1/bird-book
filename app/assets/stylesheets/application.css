@@ -27,6 +27,11 @@ hr {
 
    color: #fba882;
 }
+p {
+  text-align: center;
+}
+
+/*place index (root path)*/
 .main-title {
   color: #fba882;
   text-align: center;
@@ -51,6 +56,15 @@ hr {
 }
 .place-links:hover {
   text-decoration: underline;
+}
+
+.place-index-img {
+  background-color: #e6e5d8;
+  padding: 7px;
+  width: 400px;
+  height: 400px;
+  border: 3px solid black;
+  box-shadow: 8px 8px 12px 3px rgba(0,0,0,0.2);
 }
 /*dropdown menu*/
 .dropbtn {
@@ -98,14 +112,50 @@ hr {
 .dropdown:hover .dropbtn {
     /*background-color: #ccaf92;*/
 }
-/*place index (root path)*/
-.place-index-img {
+/*place post index*/
+.post-index-photo {
   background-color: #e6e5d8;
   padding: 7px;
   width: 400px;
   height: 400px;
   border: 3px solid black;
   box-shadow: 8px 8px 12px 3px rgba(0,0,0,0.2);
+}
+.post-index-wrapper {
+  /*padding-top: 10px;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post-index-wrapper2 {
 
-
+}
+.post-title {
+  color: white;
+  text-decoration: none;
+  font-size: 33px;
+}
+.post-title:visited {
+  color: white;
+  font-size: 33px;
+}
+.post-title:hover {
+  text-decoration: underline;
+}
+.create-date {
+  font-size: 10px;
+  padding-left: 10px;
+}
+.slash {
+  color: #cccccc;
+}
+.edit-delete {
+  color: white;
+  text-decoration: none;
+}
+.edit-delete:visited {
+  color: white;
+}
+.edit-delete:hover {
+text-decoration: underline;
 }

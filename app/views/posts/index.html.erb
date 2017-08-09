@@ -1,21 +1,33 @@
 <%= link_to "&larr; Back".html_safe, root_path, :class => 'dropbtn' %>
+
 <div class="dropdown">
   <button class="dropbtn">Menu</button>
 <div class="dropdown-content">
   <%= link_to 'New Post', new_place_post_path(@place), :class => 'home-links' %>
   <%= link_to 'Home', root_path, :class => 'home-links' %>
+
 <% if !current_user %>
 <%= link_to "Sign Up", new_user_registration_path, :class => 'home-links' %>
 <%= link_to "Sign In", new_user_session_path, :class => 'home-links'  %>
 <% else %>
 <%= link_to "Sign Out", destroy_user_session_path, :class => 'home-links', method: :delete %>
 <% end %>
+
 </div>
 </div>
+
+<div class="post-index-wrapper">
+
 <% @posts.each do |post| %>
-  <p>Updated: <%= post.updated_at %></p>
-  <p><%= link_to post.title, place_post_path(@place, post) %></p>
-  <%= link_to 'Edit post', edit_place_post_path(@place, post) %>
-  <%= link_to 'Delete post', place_post_path(@place, post), method: :delete %>
-  <img src="<%= post.photo_url %>"/>
+<div class="post-index-wrapper2">
+  <p><%= link_to post.title, place_post_path(@place, post), :class => 'post-title' %></p>
+  <hr>
+  <%= link_to 'Edit post', edit_place_post_path(@place, post), :class => 'edit-delete' %> <span class='slash'>/</span>
+  <%= link_to 'Delete post', place_post_path(@place, post), :class => 'edit-delete', method: :delete %>
+  <span class='create-date'>Create date: <%= post.created_at %></span>
+  <hr>
+  <br>
+</div>
+  <img src="<%= post.photo_url %>" class="post-index-photo"/>
 <% end %>
+</div>
