@@ -17,11 +17,13 @@
 body {
   margin-top: 0;
   font-family: sans-serif;
-  background: #827d58; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, red , yellow); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, red, yellow); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, red, yellow); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, #99cac5 , #0043ff96); /* Standard syntax */
+  background: #99cac5; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, #99cac5, #0043ff96); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #99cac5, #0043ff96); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right,#99cac5, #0043ff96); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, #99cac5, #0043ff96); /* Standard syntax */
+  font-family: 'Questrial', sans-serif;
+
 }
 hr {
 
@@ -177,6 +179,7 @@ text-decoration: underline;
 }
 .sub-title {
   color: white;
+  font-family: 'Questrial', sans-serif;
 }
 .tags {
   text-align: center;
