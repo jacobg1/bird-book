@@ -15,17 +15,19 @@
 
 <div class="place-index-wrapper">
   <h1 class='main-title'>Places</h1>
+  <br>
 
   <% @places.each do |place| %>
   <div class="place-content-wrapper">
-<hr>
+
   <%= link_to place.city, place_posts_path(place), :class => 'place-links'  %>
   <%= link_to place.state, place_posts_path(place), :class => 'place-links' %>
   <%= link_to place.country, place_posts_path(place), :class => 'place-links' %>
   <%= link_to '(edit)', edit_place_path(place), :class => 'place-links' %></p>
+
 </div>
 
 <img src="<%=place.place_photo_url%>" class='place-index-img'/>
-
+<br>
 <% end %>
 </div>
