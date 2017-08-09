@@ -1,29 +1,53 @@
 <%= link_to "&larr; Back".html_safe, place_posts_path(@place), :class => 'dropbtn' %>
+
 <div class="dropdown">
   <button class="dropbtn">Menu</button>
 <div class="dropdown-content">
 <%= link_to 'Add Comment', new_post_guess_path(@post), :class => 'home-links' %>
+
 <% if !current_user %>
 <%= link_to "Sign Up", new_user_registration_path, :class => 'home-links' %>
 <%= link_to "Sign In", new_user_session_path, :class => 'home-links'  %>
 <% else %>
 <%= link_to "Sign Out", destroy_user_session_path, :class => 'home-links', method: :delete %>
 <% end %>
+
 </div>
 </div>
-<h1><%= @post.title %></h1>
-<h3>Add Tag</h3>
+
+
+
+<div class="post-show-wrapper">
+<h1 class="sub-title"><%= @post.title %></h1>
+
+<div class="add-tags">
+
 <%= simple_form_for [@post, @tag] do |f| %>
 <%= text_field_tag :category_text %>
 <%= f.submit "Create Tag" %>
 <% end %>
+
+</div>
+
+<div class="tags">
+
 <% @tags.each do |tag| %>
 <%= link_to tag.category.category_text, category_path(tag.category) %>
 <% end %>
-<img src="<%= @post.photo_url %>"/>
+
+</div>
+
+<img src="<%= @post.photo_url %>" class="photo"/>
+
+</div>
+
+
+<div class="guess-wrapper">
+
+
 <% @post.guesses.each do |guess| %>
-  <p>Updated: <%= guess.updated_at %></p>
-  <p><%= guess.guess_text %>,
+<div class="guesses">
+  <p class='guess-text'><%= guess.guess_text %>
     <% if guess.user == current_user %>
     <%= link_to 'edit', edit_post_guess_path(@post, guess) %>
     <%= link_to 'delete', post_guess_path(@post, guess), method: :delete %>
@@ -31,4 +55,9 @@
     <%= link_to "&uarr;".html_safe, increase_score_guess_path(guess), method: :post %>
     <%= link_to "&darr;".html_safe, decrease_score_guess_path(guess), method: :post %>
     <%= guess.score %>
+    <p class='guess-created'>Created: <%= guess.created_at %></p>
+
+    </div>
+    <br>
 <% end %>
+</div>
