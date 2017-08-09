@@ -27,7 +27,7 @@ body {
 }
 hr {
 
-   color: #fba882;
+   color: #ffdfd0;
 }
 p {
   text-align: center;
@@ -35,9 +35,9 @@ p {
 
 /*place index (root path)*/
 .main-title {
-  color: #fba882;
+  color: #ffdfd0;
   text-align: center;
-  font-size:95px;
+  font-size: 95px;
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: 'Questrial', sans-serif;
@@ -52,7 +52,7 @@ p {
 }
 .place-links {
 
-  color: #ffffff;
+  color: #ffe1e1;
   text-decoration: none;
   font-size: 25px;
 }
@@ -133,13 +133,12 @@ p {
 
 }
 .post-title {
-  color: white;
+  color: #ffe1e1;
   text-decoration: none;
-  font-size: 33px;
+  font-size: 55px;
 }
 .post-title:visited {
-  color: white;
-  font-size: 33px;
+  color: #ffe1e1;
 }
 .post-title:hover {
   text-decoration: underline;
@@ -178,8 +177,9 @@ text-decoration: underline;
   align-items: center;
 }
 .sub-title {
-  color: white;
-  font-size: 50px;
+  margin-top: 0;
+  color: #ffe1e1;
+  font-size: 55px;
   font-family: 'Questrial', sans-serif;
 }
 .tags {
@@ -222,4 +222,24 @@ text-decoration: underline;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+/*tag show page*/
+.tag-show-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tag {
+  text-align: center;
+
+
+}
+.tag-show-content {
+  background-color: #42413c;
+  padding: 5px;
+  color: white;
+  font-size: 15px;
+  height: auto;
+  width: 40px;
+  border: 3px solid black;
 }

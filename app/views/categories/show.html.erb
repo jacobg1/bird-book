@@ -1,8 +1,17 @@
 <%= link_to "&larr; Back".html_safe, :back, :class => 'dropbtn' %>
+<div class="tag-show-wrapper">
+<div class="tag">
+<h3 class='tag-show-content'><%= @category.category_text %></h3>
+</div>
 
-<h2><%= @category.category_text %></h2>
+
+
+
+
+
 
 <% @posts.each do |post| %>
-<%= post.title %>
-<img src= "<%= post.photo_url %>" />
+<h1 class='sub-title'><%= post.title %></h1>
+<img src= "<%= post.photo_url %>" class='photo' />
 <% end %>
+</div>
