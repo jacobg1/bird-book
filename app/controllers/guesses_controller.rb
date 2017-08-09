@@ -48,6 +48,7 @@ class GuessesController < ApplicationController
 
   def edit
     @post = Post.find(params[:post_id])
+    @place = @post.place
     @guess = Guess.find(params[:id])
   end
 
