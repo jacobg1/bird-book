@@ -18,9 +18,9 @@ body {
   margin-top: 0;
   font-family: sans-serif;
   background: #99cac5; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left, #99cac5, #0043ff96); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, #99cac5, #0043ff96); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right,#99cac5, #0043ff96); /* For Firefox 3.6 to 15 */
+  background: -webkit-linear-gradient(left, #99cac5, #0043FF); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, #99cac5, #0043ff96);*/ /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right,#99cac5, #0043FF); /* For Firefox 3.6 to 15 */
   background: linear-gradient(to right, #99cac5, #0043ff96); /* Standard syntax */
   font-family: 'Questrial', sans-serif;
 
@@ -151,7 +151,7 @@ p {
 .slash {
   color: #cccccc;
 }
-.edit-delete {
+.edit-delete, .arrows{
   color: white;
   text-decoration: none;
 }
@@ -226,15 +226,19 @@ text-decoration: underline;
 }
 /*tag show page*/
 .tag-show-wrapper {
+  padding-top: 30px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .tag {
+  padding-bottom: 30px;
   text-align: center;
 
 }
 .tag-show-content {
+  display: inline;
   align-items: center;
   background-color: #42413c;
   padding: 5px;
@@ -246,7 +250,6 @@ text-decoration: underline;
 }
 /*flash alerts*/
 .notice {
-
   font-size: 25px;
   color: white;
   margin-left: 850px;
@@ -259,4 +262,12 @@ font-size: 25px;
   margin-left: 850px;
   position: absolute;
   text-align: center;
+}
+.comment-edit-delete, .score {
+  color: #5f70ff;
+  text-decoration: none;
+}
+.comment-edit-delete:visited {
+  color: #5f70ff;
+  text-decoration: none;
 }
