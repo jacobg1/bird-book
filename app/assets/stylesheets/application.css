@@ -71,6 +71,7 @@ p {
 /*dropdown menu*/
 .dropbtn {
     position: fixed;
+    margin-top: 20px;
     background-color: #e6e5d8;
     color: black;
     padding: 5px;
@@ -84,7 +85,7 @@ p {
 .dropdown {
     position: fixed;
     left: 10px;
-    top: 65px;
+    top: 50px;
 
 
     display: inline-block;
@@ -232,14 +233,30 @@ text-decoration: underline;
 .tag {
   text-align: center;
 
-
 }
 .tag-show-content {
+  align-items: center;
   background-color: #42413c;
   padding: 5px;
   color: white;
   font-size: 15px;
   height: auto;
-  width: 40px;
+  width: 50px;
   border: 3px solid black;
+}
+/*flash alerts*/
+.notice {
+
+  font-size: 25px;
+  color: white;
+  margin-left: 850px;
+  position: absolute;
+  text-align: center;
+}
+.alert {
+font-size: 25px;
+  color: white;
+  margin-left: 850px;
+  position: absolute;
+  text-align: center;
 }
