@@ -20,6 +20,21 @@
 <div class="post-show-wrapper">
 <h1 class="sub-title"><%= @post.title %></h1>
 
+
+
+
+<div class="tags">
+
+<% @tags.each do |tag| %>
+<%= link_to tag.category.category_text, category_path(tag.category), :class => 'tag-content' %>
+<% end %>
+
+</div>
+<br>
+<img src="<%= @post.photo_url %>" class="photo"/>
+
+</div>
+<br>
 <div class="add-tags">
 
 <%= simple_form_for [@post, @tag] do |f| %>
@@ -28,20 +43,7 @@
 <% end %>
 
 </div>
-
-<div class="tags">
-
-<% @tags.each do |tag| %>
-<%= link_to tag.category.category_text, category_path(tag.category) %>
-<% end %>
-
-</div>
-
-<img src="<%= @post.photo_url %>" class="photo"/>
-
-</div>
-
-
+<br>
 <div class="guess-wrapper">
 
 
