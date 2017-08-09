@@ -258,7 +258,7 @@ text-decoration: underline;
   text-align: center;
 }
 .alert {
-font-size: 25px;
+  font-size: 25px;
   color: white;
   margin-left: 850px;
   position: absolute;
@@ -275,19 +275,20 @@ font-size: 25px;
 /*simple forms*/
 
 .simple_form {
-
+margin-top: 30px;
     font-family: 'Questrial', sans-serif;
     color: #ffffff;
     margin: 0 auto;
     font-size: 33px;
     width: 450px;
-    background: #5ba2ec;
+    background: #9ab9d8;
     padding: 30px 30px 15px 30px;
-    border: 5px solid #53687E;
+    border: 5px solid #dedede;
 
 }
 .simple_form label{
 
+    margin-left: 60px;
     padding:5px;
     display:inline;
     font-weight: bold;
@@ -304,6 +305,7 @@ abbr[title="required"] {
   display: none;
 }
 .comment-form {
+
   margin: 0 auto;
   width: 200px;
   box-sizing: border-box;
