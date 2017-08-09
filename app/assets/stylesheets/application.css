@@ -287,8 +287,6 @@ margin-top: 30px;
 
 }
 .simple_form label{
-
-    margin-left: 60px;
     padding:5px;
     display:inline;
     font-weight: bold;
@@ -309,4 +307,7 @@ abbr[title="required"] {
   margin: 0 auto;
   width: 200px;
   box-sizing: border-box;
+}
+.simple_form .error {
+  font-size: 2px;
 }
