@@ -20,11 +20,7 @@ body {
   background: -webkit-linear-gradient(left, #99cac5, #0043FF); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(right, #99cac5, #0043ff); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(right,#99cac5, #0043FF); /* For Firefox 3.6 to 15 */
-<<<<<<< HEAD
   background: linear-gradient(to right, #99cac5, #0043FF); /* Standard syntax */
-=======
-  background: linear-gradient(to right, #99cac5, #0043ff); /* Standard syntax */
->>>>>>> c5161bf95b9a7e6fe744e501294881dd744575de
   font-family: 'Questrial', sans-serif;
 }
 
