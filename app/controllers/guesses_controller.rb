@@ -47,10 +47,10 @@ class GuessesController < ApplicationController
     @guess = Guess.find(params[:id])
     if @guess.user == current_user
       @guess.update(guess_params.merge(user: current_user))
-      flash[:notice] = 'Guess updated!'
+      flash[:notice] = 'Comment updated!'
       redirect_to place_post_path(@place, @post)
     else
-      flash[:alert] = 'Only OP can update guess!'
+      flash[:alert] = 'Only OP can update comment!'
       render :new
     end
   end
@@ -61,10 +61,10 @@ class GuessesController < ApplicationController
     @guess = Guess.find(params[:id])
     if @guess.user == current_user
        @guess.destroy
-       flash[:notice] = 'Guess deleted!'
+       flash[:notice] = 'Comment deleted!'
        redirect_to place_post_path(@place, @post)
     else
-       flash[:alert] = 'only OP can delete guess'
+       flash[:alert] = 'only OP can delete comment'
        redirect_to place_post_path(@place, @post)
     end
   end
