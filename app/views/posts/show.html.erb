@@ -3,6 +3,7 @@
 <div class="dropdown">
   <button class="dropbtn">Menu</button>
 <div class="dropdown-content">
+  
 <%= link_to 'Add Comment', new_post_guess_path(@post), :class => 'home-links' %>
 <%= link_to 'Home', root_path, :class => 'home-links' %>
 
@@ -16,13 +17,8 @@
 </div>
 </div>
 
-
-
 <div class="post-show-wrapper">
 <h1 class="sub-title"><%= @post.title %></h1>
-
-
-
 
 <div class="tags">
 
@@ -32,7 +28,10 @@
 
 </div>
 <br>
-<img src="<%= @post.photo_url %>" class="photo"/>
+<object data="<%= @post.photo_url %>" type="image/png" class="photo">
+<img src="https://appharbor.com/assets/images/stackoverflow-logo.png" class="default-photo"/>
+</object>
+
 
 </div>
 <br>
