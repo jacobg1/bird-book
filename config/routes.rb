@@ -13,20 +13,11 @@ Rails.application.routes.draw do
       resources :tags
     end
 
-
-
-
-
     resources :guesses do
       member do
             post "increase_score"
             post "decrease_score"
         end
       end
-  # resources :places do
-  #   resources :posts do
-  #     resources :guesses
-  #   end
-  # end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

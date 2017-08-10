@@ -17,17 +17,6 @@ class GuessesController < ApplicationController
     redirect_to place_post_path(@place, @post)
   end
 
-  # def show
-  #   @post = Post.find(params[:post_id])
-  #   @place = @post.place
-  #   @guess = Guess.find(params[:id])
-  #   @guesses = Guess.all
-  #   @guess.score_up
-  #   @guess.save
-  #
-  #   redirect_to place_post_path(@place, @post)
-  # end
-
   def new
     @post = Post.find(params[:post_id])
     @place = @post.place
@@ -39,7 +28,7 @@ class GuessesController < ApplicationController
     @place = @post.place
     @guess = @post.guesses.new(guess_params.merge(user: current_user))
     if @guess.save
-      flash[:notice] = 'Guess made!'
+      flash[:notice] = 'Comment posted!'
       redirect_to place_post_path(@place, @post)
     else
       render :new
