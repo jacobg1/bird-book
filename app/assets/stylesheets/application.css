@@ -311,3 +311,6 @@ abbr[title="required"] {
 .simple_form .error {
   font-size: 2px;
 }
+.default-photo {
+  width: 100%;
+}
