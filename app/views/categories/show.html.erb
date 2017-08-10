@@ -8,7 +8,9 @@
 
 <% @posts.each do |post| %>
 <h1 class='sub-title'><%= post.title %></h1>
-<img src= "<%= post.photo_url %>" class='photo' />
+<object data="<%= post.photo_url %>" type="image/png" class="photo">
+<img src="https://www.justpro.co/img/no-image.png" class="default-photo"/>
+</object>
 <br>
 <% end %>
 </div>
