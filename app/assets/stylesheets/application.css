@@ -16,7 +16,6 @@
 /*main*/
 body {
   margin-top: 0;
-  font-family: sans-serif;
   background: #99cac5; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left, #99cac5, #0043FF); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(right, #99cac5, #0043ff); /* For Opera 11.1 to 12.0 */
@@ -326,4 +325,20 @@ abbr[title="required"] {
 
 .default-photo {
   width: 100%;
+}
+
+/*signature*/
+footer {
+  float: left;
+  text-align: left;
+}
+.signature {
+  font-family: 'Questrial', sans-serif;
+  color: #ffdfd0;
+}
+.sig {
+  position: fixed;
+  font-size: 14px;
+  bottom: 0;
+  padding-left: 20px;
 }
