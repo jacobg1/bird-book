@@ -28,8 +28,12 @@
   <hr>
   <br>
 </div>
-<object data="<%= post.photo_url %>" type="image/png" class="photo">
+<!--
+  From a UI perspective, it's preferrable to be able to click on this image
+  in addition to the title in order to visit the linked resource/page
+-->
+<a href="<%= place_post_path(@place, post) %>"><object data="<%= post.photo_url %>" type="image/png" class="photo">
 <img src="https://www.justpro.co/img/no-image.png" class="default-photo"/>
-</object>
+</object></a>
 <% end %>
 </div>
