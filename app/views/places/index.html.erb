@@ -19,16 +19,20 @@
 
   <% @places.each do |place| %>
   <div class="place-content-wrapper">
-
-  <%= link_to place.city, place_posts_path(place), :class => 'place-links'  %>
-  <%= link_to place.state, place_posts_path(place), :class => 'place-links' %>
-  <%= link_to place.country, place_posts_path(place), :class => 'place-links' %>
+  <!--
+    Was a little weird to have 3 separate link_to methods for the same link.
+    I think it's better to make one link with the text interpolated together
+  -->
+  <%= link_to "#{place.city} #{place.state} #{place.country}", place_posts_path(place), :class => 'place-links' %>
   <%= link_to '(edit)', edit_place_path(place), :class => 'place-links' %></p>
 
 </div>
-
-<object data="<%=place.place_photo_url%>" type="image/png" class="photo">
-<img src="https://www.justpro.co/img/no-image.png" class="default-photo"/>
+<!--
+  From a UI perspective, it's preferrable to be able to click on this image
+  in addition to the title in order to visit the linked resource/page
+-->
+<a href="<%= place_posts_path(place) %>"><object data="<%=place.place_photo_url%>" type="image/png" class="photo">
+<img src="https://www.justpro.co/img/no-image.png" class="default-photo"/></a>
 </object>
 
 <br>

@@ -46,6 +46,12 @@
 <br>
 <div class="guess-wrapper">
 
+<!--
+  Consider adding the guess form directly in the show page. It saves the user an
+  extra click from having to visit a separate page.
+-->
+<% @guess = Guess.new %>
+<%= render 'guesses/form' %>
 
 <% @post.guesses.each do |guess| %>
 <div class="guesses">
